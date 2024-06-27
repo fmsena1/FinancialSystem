@@ -1,0 +1,17 @@
+﻿@model List<FinancialSystem.Models.Entities.Invoice>
+
+@foreach (var invoice in Model)
+{
+    <tr>
+        <td class="checkbox-column"><input type="checkbox" class="invoiceCheckbox" data-id="@invoice.Id"></td>
+        <td>@invoice.PayerName</td>
+        <td>@invoice.InvoiceNumber</td>
+        <td>@invoice.IssuanceDate.ToString("dd/MM/yyyy")</td>
+        <td>@(invoice.BillingDate.HasValue ? invoice.BillingDate.Value.ToString("dd/MM/yyyy") : "-")</td>
+        <td>@(invoice.PaymentDate.HasValue ? invoice.PaymentDate.Value.ToString("dd/MM/yyyy") : "-")</td>
+        <td>@invoice.Amount.ToString("C")</td>
+        <td>@invoice.InvoiceDocument</td>
+        <td>@invoice.BankSlipDocument</td>
+        <td>@invoice.Status</td>
+    </tr>
+}

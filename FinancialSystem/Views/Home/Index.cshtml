@@ -1,0 +1,122 @@
+﻿@model List<FinancialSystem.Models.Entities.Invoice>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer T
+
+@{
+    ViewData["Title"] = "Notas Fiscais Emitidas";
+}
+
+<div class="row mb-3">
+    <div class="col-md-3">
+        <label for="monthIssuanceFilter">Filtrar pelo mês de emissão:</label>
+        <select id="monthIssuanceFilter" class="form-control">
+            <option value="">Todos</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label for="monthBillingFilter">Filtrar pelo mês de cobrança:</label>
+        <select id="monthBillingFilter" class="form-control">
+            <option value="">Todos</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label for="monthPaymentFilter">Filtrar pelo mês de pagamento:</label>
+        <select id="monthPaymentFilter" class="form-control">
+            <option value="">Todos</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label for="statusFilter">Filtrar pelo status da nota:</label>
+        <select id="statusFilter" class="form-control">
+            <option value="">Todos</option>
+            <option value="1">Emitida</option>
+            <option value="2">Cobrança Concluída</option>
+            <option value="3">Pagamento em Atraso</option>
+            <option value="4">Pagamento Concluído</option>
+        </select>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table id="invoiceTable" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nome do Pagador</th>
+                <th>Número da Nota Fiscal</th>
+                <th>Data de Emissão</th>
+                <th>Data de Vencimento</th>
+                <th>Data de Pagamento</th>
+                <th>Valor</th>
+                <th>Documento da Nota Fiscal</th>
+                <th>Documento do Boleto</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody class="custom-scroll">
+            @foreach (var invoice in Model)
+            {
+                <tr>
+                    <td>@invoice.PayerName</td>
+                    <td>@invoice.InvoiceNumber</td>
+                    <td>@invoice.IssuanceDate.ToString("dd/MM/yyyy")</td>
+                    <td>@(invoice.BillingDate.HasValue ? invoice.BillingDate.Value.ToString("dd/MM/yyyy") : "-")</td>
+                    <td>@(invoice.PaymentDate.HasValue ? invoice.PaymentDate.Value.ToString("dd/MM/yyyy") : "-")</td>
+                    <td>@invoice.Amount.ToString("C")</td>
+                    <td>@invoice.InvoiceDocument</td>
+                    <td>@invoice.BankSlipDocument</td>
+                    <td>@Html.DisplayFor(modelItem => invoice.Status)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .table tbody tr {
+        background-color: white;
+    }
+
+        .table tbody tr:hover {
+            background-color: #e3e3e3;
+        }
+</style>
+
+@section Scripts {
+    <script src="~/js/home.js"></script>
+}

@@ -1,0 +1,110 @@
+﻿@model FinancialSystem.Models.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!-- Filtros -->
+<div class="row mb-3">
+    <div class="col-md-4">
+        <label for="filterYear" class="form-label">Ano:</label>
+        <select id="filterYear" class="form-select">
+            <!-- Opções de ano serão adicionadas dinamicamente aqui -->
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label for="filterMonth" class="form-label">Mês:</label>
+        <select id="filterMonth" class="form-select">
+            <option value="">Todos</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label for="filterQuarter" class="form-label">Trimestre:</label>
+        <select id="filterQuarter" class="form-select">
+            <option value="">Todos</option>
+            <option value="1">1º Trimestre</option>
+            <option value="2">2º Trimestre</option>
+            <option value="3">3º Trimestre</option>
+            <option value="4">4º Trimestre</option>
+        </select>
+    </div>
+</div>
+
+<!-- Cards -->
+<div class="row mb-3">
+    <div class="col-md-4">
+        <div class="card w-100">
+            <div class="card-body">
+                <h5 class="card-title">Card title 1</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card w-100">
+            <div class="card-body">
+                <h5 class="card-title">Card title 2</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card w-100">
+            <div class="card-body">
+                <h5 class="card-title">Card title 3</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Gráficos -->
+<div class="row">
+    <div class="col-md-4">
+        <div class="card mb-3 w-100">
+            <div class="card-body">
+                <h5 class="card-title text-center">Gráfico de Indicadores</h5>
+                <div class="chart-container">
+                    <canvas id="mainChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-3 w-100">
+            <div class="card-body">
+                <h5 class="card-title text-center">Evolução da Inadimplência</h5>
+                <div class="chart-container">
+                    <canvas id="overdueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card mb-3 w-100">
+            <div class="card-body">
+                <h5 class="card-title text-center">Evolução da Receita Recebida</h5>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/js/dashboard.js"></script>
+}
