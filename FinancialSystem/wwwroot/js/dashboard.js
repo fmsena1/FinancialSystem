@@ -1,11 +1,11 @@
 ﻿$(document).ready(function () {
-    var currentYear = new Date().getFullYear();  // Obtém o ano atual
+    var currentYear = new Date().getFullYear();
 
     $.getJSON('/Year/GetYears', function (data) {
         var filterYear = $('#filterYear');
         filterYear.append('<option value="">Selecione o ano</option>');
         $.each(data, function (index, value) {
-            var selected = value.year == currentYear ? ' selected' : '';  // Marca o ano atual como selecionado
+            var selected = value.year == currentYear ? ' selected' : '';
             filterYear.append('<option value="' + value.year + '"' + selected + '>' + value.year + '</option>');
         });
     });
@@ -15,7 +15,7 @@
     });
 
     function loadData() {
-        var year = $('#filterYear').val() || currentYear;  // Ano padrão é o ano atual
+        var year = $('#filterYear').val() || currentYear;
         var month = $('#filterMonth').val();
         var quarter = $('#filterQuarter').val();
 
