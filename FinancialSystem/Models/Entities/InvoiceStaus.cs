@@ -5,6 +5,6 @@
         Issued,
         BillingCompleted,
         PaymentOverdue,
-        PaymentCompleted
+        PaymentCompleted,
     }
 }

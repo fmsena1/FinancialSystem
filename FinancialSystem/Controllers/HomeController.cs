@@ -1,25 +1,43 @@
 using FinancialSystem.Data;
 using FinancialSystem.Models;
-using FinancialSystem.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using Microsoft.Extensions.Localization;
+using FinancialSystem.Resources;
+using FinancialSystem.Models.Entities;
 
 namespace FinancialSystem.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ApplicationDbContext dbContext;
+        private readonly ApplicationDbContext _dbContext;
+        private readonly IStringLocalizer<SharedResource> _localizer;
 
-        public HomeController(ApplicationDbContext dbContext)
+        public HomeController(ApplicationDbContext dbContext, IStringLocalizer<SharedResource> localizer)
         {
-            this.dbContext = dbContext;
+            _dbContext = dbContext;
+            _localizer = localizer;
         }
 
         // GET: /
         [HttpGet]
         public IActionResult Index()
         {
-            List<Invoice> invoices = dbContext.Invoices.ToList();
+            List<InvoiceViewModel> invoices = _dbContext.Invoices
+                .Select(i => new InvoiceViewModel
+                {
+                    Id = i.Id,
+                    PayerName = i.PayerName,
+                    InvoiceNumber = i.InvoiceNumber,
+                    IssuanceDate = i.IssuanceDate,
+                    BillingDate = i.BillingDate,
+                    PaymentDate = i.PaymentDate,
+                    Amount = i.Amount,
+                    InvoiceDocument = i.InvoiceDocument,
+                    BankSlipDocument = i.BankSlipDocument,
+                    Status = i.Status.ToString(),
+                })
+                .ToList();
+
             return View(invoices);
         }
 
@@ -27,7 +45,7 @@ namespace FinancialSystem.Controllers
         [HttpGet]
         public IActionResult FilterInvoices(int? issuanceMonth, int? billingMonth, int? paymentMonth, string status)
         {
-            IQueryable<Invoice> query = dbContext.Invoices.AsQueryable();
+            IQueryable<Invoice> query = _dbContext.Invoices.AsQueryable();
 
             if (issuanceMonth.HasValue)
             {
@@ -46,10 +64,25 @@ namespace FinancialSystem.Controllers
 
             if (!string.IsNullOrEmpty(status))
             {
-                query = query.Where(i => ((int)i.Status) == Int32.Parse(status));
+                query = query.Where(i => ((int)i.Status).ToString() == status);
             }
 
-            List<Invoice> filteredInvoices = query.ToList();
+            List<InvoiceViewModel> filteredInvoices = query
+                .Select(i => new InvoiceViewModel
+                {
+                    Id = i.Id,
+                    PayerName = i.PayerName,
+                    InvoiceNumber = i.InvoiceNumber,
+                    IssuanceDate = i.IssuanceDate,
+                    BillingDate = i.BillingDate,
+                    PaymentDate = i.PaymentDate,
+                    Amount = i.Amount,
+                    InvoiceDocument = i.InvoiceDocument,
+                    BankSlipDocument = i.BankSlipDocument,
+                    Status = i.Status.ToString(),
+                })
+                .ToList();
+
             return PartialView("_InvoiceListPartial", filteredInvoices);
         }
     }

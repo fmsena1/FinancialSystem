@@ -117,7 +117,130 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TEST" xml:space="preserve">
-    <value>Hello</value>
+  <data name="Dashboard" xml:space="preserve">
+  <value>Dashboard</value>
+</data>
+  <data name="Year" xml:space="preserve">
+  <value>Year</value>
+</data>
+  <data name="Month" xml:space="preserve">
+  <value>Month</value>
+</data>
+  <data name="All" xml:space="preserve">
+  <value>All</value>
+</data>
+  <data name="January" xml:space="preserve">
+  <value>January</value>
+</data>
+  <data name="February" xml:space="preserve">
+  <value>February</value>
+</data>
+  <data name="March" xml:space="preserve">
+  <value>March</value>
+</data>
+  <data name="April" xml:space="preserve">
+  <value>April</value>
+</data>
+  <data name="May" xml:space="preserve">
+  <value>May</value>
+</data>
+  <data name="June" xml:space="preserve">
+  <value>June</value>
+</data>
+  <data name="July" xml:space="preserve">
+  <value>July</value>
+</data>
+  <data name="August" xml:space="preserve">
+  <value>August</value>
+</data>
+  <data name="September" xml:space="preserve">
+  <value>September</value>
+</data>
+  <data name="October" xml:space="preserve">
+  <value>October</value>
+</data>
+  <data name="November" xml:space="preserve">
+  <value>November</value>
+</data>
+  <data name="December" xml:space="preserve">
+  <value>December</value>
+</data>
+  <data name="Quarter" xml:space="preserve">
+  <value>Quarter</value>
+</data>
+  <data name="1st Quarter" xml:space="preserve">
+  <value>1st Quarter</value>
+</data>
+  <data name="2nd Quarter" xml:space="preserve">
+  <value>2nd Quarter</value>
+</data>
+  <data name="3rd Quarter" xml:space="preserve">
+  <value>3rd Quarter</value>
+</data>
+  <data name="4th Quarter" xml:space="preserve">
+  <value>4th Quarter</value>
+</data>
+  <data name="Indicator Chart" xml:space="preserve">
+  <value>Indicator Chart</value>
+</data>
+  <data name="Overdue Evolution" xml:space="preserve">
+  <value>Overdue Evolution</value>
+</data>
+  <data name="Revenue Evolution" xml:space="preserve">
+  <value>Revenue Evolution</value>
+</data>
+  <data name="Title" xml:space="preserve">
+    <value>Issued Invoices</value>
+  </data>
+  <data name="FilterByMonthIssuance" xml:space="preserve">
+    <value>Filter by issuance month:</value>
+  </data>
+  <data name="FilterByMonthBilling" xml:space="preserve">
+    <value>Filter by billing month:</value>
+  </data>
+  <data name="FilterByMonthPayment" xml:space="preserve">
+    <value>Filter by payment month:</value>
+  </data>
+  <data name="FilterByStatus" xml:space="preserve">
+    <value>Filter by invoice status:</value>
+  </data>
+  <data name="PayerName" xml:space="preserve">
+    <value>Payer Name</value>
+  </data>
+  <data name="InvoiceNumber" xml:space="preserve">
+    <value>Invoice Number</value>
+  </data>
+  <data name="IssuanceDate" xml:space="preserve">
+    <value>Issuance Date</value>
+  </data>
+  <data name="BillingDate" xml:space="preserve">
+    <value>Billing Date</value>
+  </data>
+  <data name="PaymentDate" xml:space="preserve">
+    <value>Payment Date</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="InvoiceDocument" xml:space="preserve">
+    <value>Invoice Document</value>
+  </data>
+  <data name="BankSlipDocument" xml:space="preserve">
+    <value>Bank Slip Document</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Issued" xml:space="preserve">
+    <value>Issued</value>
+  </data>
+  <data name="BillingCompleted" xml:space="preserve">
+    <value>Billing Completed</value>
+  </data>
+  <data name="PaymentOverdue" xml:space="preserve">
+    <value>Payment Overdue</value>
+  </data>
+  <data name="PaymentCompleted" xml:space="preserve">
+    <value>Payment Completed</value>
   </data>
 </root>

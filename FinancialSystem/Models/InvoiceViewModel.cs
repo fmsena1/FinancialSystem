@@ -1,6 +1,6 @@
-﻿namespace FinancialSystem.Models.Entities
+﻿namespace FinancialSystem.Models
 {
-    public class Invoice
+    public class InvoiceViewModel
     {
         public int Id { get; set; }
         public string? PayerName { get; set; }
@@ -11,6 +11,6 @@
         public decimal Amount { get; set; }
         public string? InvoiceDocument { get; set; }
         public string? BankSlipDocument { get; set; }
-        public InvoiceStatus Status { get; set; }
+        public string Status { get; set; }
     }
 }

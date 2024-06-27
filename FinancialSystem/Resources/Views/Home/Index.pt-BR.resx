@@ -117,7 +117,130 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TEST" xml:space="preserve">
-    <value>Olaaa</value>
+  <data name="Dashboard" xml:space="preserve">
+  <value>Dashboard</value>
+</data>
+  <data name="Year" xml:space="preserve">
+  <value>Ano</value>
+</data>
+  <data name="Month" xml:space="preserve">
+  <value>Mês</value>
+</data>
+  <data name="All" xml:space="preserve">
+  <value>Todos</value>
+</data>
+  <data name="January" xml:space="preserve">
+  <value>Janeiro</value>
+</data>
+  <data name="February" xml:space="preserve">
+  <value>Fevereiro</value>
+</data>
+  <data name="March" xml:space="preserve">
+  <value>Março</value>
+</data>
+  <data name="April" xml:space="preserve">
+  <value>Abril</value>
+</data>
+  <data name="May" xml:space="preserve">
+  <value>Maio</value>
+</data>
+  <data name="June" xml:space="preserve">
+  <value>Junho</value>
+</data>
+  <data name="July" xml:space="preserve">
+  <value>Julho</value>
+</data>
+  <data name="August" xml:space="preserve">
+  <value>Agosto</value>
+</data>
+  <data name="September" xml:space="preserve">
+  <value>Setembro</value>
+</data>
+  <data name="October" xml:space="preserve">
+  <value>Outubro</value>
+</data>
+  <data name="November" xml:space="preserve">
+  <value>Novembro</value>
+</data>
+  <data name="December" xml:space="preserve">
+  <value>Dezembro</value>
+</data>
+  <data name="Quarter" xml:space="preserve">
+  <value>Trimestre</value>
+</data>
+  <data name="1st Quarter" xml:space="preserve">
+  <value>1º Trimestre</value>
+</data>
+  <data name="2nd Quarter" xml:space="preserve">
+  <value>2º Trimestre</value>
+</data>
+  <data name="3rd Quarter" xml:space="preserve">
+  <value>3º Trimestre</value>
+</data>
+  <data name="4th Quarter" xml:space="preserve">
+  <value>4º Trimestre</value>
+</data>
+  <data name="Indicator Chart" xml:space="preserve">
+  <value>Gráfico de Indicadores</value>
+</data>
+  <data name="Overdue Evolution" xml:space="preserve">
+  <value>Evolução da Inadimplência</value>
+</data>
+  <data name="Revenue Evolution" xml:space="preserve">
+  <value>Evolução da Receita Recebida</value>
+</data>
+  <data name="Title" xml:space="preserve">
+    <value>Notas Fiscais Emitidas</value>
+  </data>
+  <data name="FilterByMonthIssuance" xml:space="preserve">
+    <value>Filtrar pelo mês de emissão:</value>
+  </data>
+  <data name="FilterByMonthBilling" xml:space="preserve">
+    <value>Filtrar pelo mês de cobrança:</value>
+  </data>
+  <data name="FilterByMonthPayment" xml:space="preserve">
+    <value>Filtrar pelo mês de pagamento:</value>
+  </data>
+  <data name="FilterByStatus" xml:space="preserve">
+    <value>Filtrar pelo status da nota:</value>
+  </data>
+  <data name="PayerName" xml:space="preserve">
+    <value>Nome do Pagador</value>
+  </data>
+  <data name="InvoiceNumber" xml:space="preserve">
+    <value>Número da Nota Fiscal</value>
+  </data>
+  <data name="IssuanceDate" xml:space="preserve">
+    <value>Data de Emissão</value>
+  </data>
+  <data name="BillingDate" xml:space="preserve">
+    <value>Data de Vencimento</value>
+  </data>
+  <data name="PaymentDate" xml:space="preserve">
+    <value>Data de Pagamento</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="InvoiceDocument" xml:space="preserve">
+    <value>Documento da Nota Fiscal</value>
+  </data>
+  <data name="BankSlipDocument" xml:space="preserve">
+    <value>Documento do Boleto</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Issued" xml:space="preserve">
+    <value>Emitida</value>
+  </data>
+  <data name="BillingCompleted" xml:space="preserve">
+    <value>Cobrança Concluída</value>
+  </data>
+  <data name="PaymentOverdue" xml:space="preserve">
+    <value>Pagamento em Atraso</value>
+  </data>
+  <data name="PaymentCompleted" xml:space="preserve">
+    <value>Pagamento Concluído</value>
   </data>
 </root>
