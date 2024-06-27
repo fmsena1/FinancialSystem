@@ -1,38 +1,35 @@
-#Financial System
+# Financial System
 
-Este é um projeto ASP.NET Core no padrão MVC que gerencia um sistema financeiro. O sistema permite a criação, visualização, edição e exclusão de faturas (invoices).
-Tecnologias Utilizadas
+Este é um projeto ASP.NET Core no padrão MVC que gerencia um sistema financeiro. O sistema permite a, visualização, filtragem de dados.
 
-    ASP.NET Core MVC
-    Entity Framework Core
-    SQL Server
+## Tecnologias Utilizadas
 
-Estrutura do Projeto
+- ASP.NET Core MVC
+- Entity Framework Core
+- SQL Server
+- Razor
 
-    Models: Contém as classes de modelo do domínio.
-    Controllers: Contém os controladores que gerenciam a lógica de negócios e manipulam as requisições.
-    Views: Contém as páginas de visualização (Razor).
-    Data: Contém o contexto do Entity Framework Core e a configuração do banco de dados.
+## Estrutura do Projeto
 
-Requisitos
+- **Models**: Contém as classes de modelo do domínio.
+- **Controllers**: Contém os controladores que gerenciam a lógica de negócios e manipulam as requisições.
+- **Views**: Contém as páginas de visualização (Razor).
+- **Data**: Contém o contexto do Entity Framework Core e a configuração do banco de dados.
+- **Resources**: Contém as strings de tradução.
 
-    .NET 6.0 SDK ou superior
-    SQL Server
+## Requisitos
 
-Configuração do Banco de Dados
-1. Criar o Banco de Dados
+- .NET 8.0
+- SQL Server
 
-Execute o seguinte script SQL para criar o banco de dados FinancialSystemDB:
+## Configuração do Banco de Dados
 
-sql
+### 1. Criar o Banco de Dados
 
-CREATE DATABASE FinancialSystemDB;
+Execute o seguinte script SQL para criar o banco de dados `FinancialSystemDB`:
 
-2. Criar a Tabela Invoices
-
-Execute o seguinte script SQL para criar a tabela Invoices no banco de dados FinancialSystemDB:
-
-sql
+```sql
+-- Criar a DB FinancialSystemDB
 
 -- Criar a tabela Invoices
 CREATE TABLE Invoices (
@@ -49,12 +46,12 @@ CREATE TABLE Invoices (
 );
 
 -- Verificar os dados da tabela Invoices
-SELECT Id, Amount FROM Invoices;
+SELECT * FROM Invoices;
 
 -- Limpando a tabela antes de inserir dados
 DELETE FROM Invoices;
 
--- Inserindo dados mock na tabela Invoices
+-- Inserindo dados dados na tabela Invoices
 INSERT INTO Invoices (PayerName, InvoiceNumber, IssuanceDate, BillingDate, PaymentDate, Amount, InvoiceDocument, BankSlipDocument, Status)
 VALUES 
 ('Company A', 'INV-001', '2023-01-10', '2023-01-15', '2023-01-20', 1000.00, 'INV-001.pdf', 'BOL-001.pdf', 3), 
@@ -68,63 +65,27 @@ VALUES
 ('Company I', 'INV-009', '2023-09-10', '2023-09-15', '2023-09-20', 5000.00, 'INV-009.pdf', 'BOL-009.pdf', 3), 
 ('Company J', 'INV-010', '2023-10-10', '2023-10-15', '2023-10-20', 5500.00, 'INV-010.pdf', 'BOL-010.pdf', 1),
 ('Company K', 'INV-011', '2023-11-10', '2023-11-15', '2023-12-20', 6000.00, 'INV-011.pdf', 'BOL-011.pdf', 3), 
-('Company P', 'INV-016', '2024-04-10', NULL, NULL, 11000.00, 'INV-016.pdf', 'BOL-016.pdf', 1), -- TotalAmountNotBilled
-('Company Q', 'INV-017', '2024-05-10', NULL, NULL, 12000.00, 'INV-017.pdf', 'BOL-017.pdf', 1), -- TotalAmountNotBilled
-('Company R', 'INV-018', '2024-06-10', NULL, NULL, 13000.00, 'INV-018.pdf', 'BOL-018.pdf', 1), -- TotalAmountNotBilled
-('Company S', 'INV-019', '2024-07-10', '2024-07-15', '2024-07-20', 14000.00, 'INV-019.pdf', 'BOL-019.pdf', 2), -- TotalAmountDue
-('Company T', 'INV-020', '2024-08-10', '2024-08-15', '2024-08-20', 15000.00, 'INV-020.pdf', 'BOL-020.pdf', 2), -- TotalAmountDue
-('Company U', 'INV-021', '2024-09-10', '2024-09-15', '2024-09-20', 16000.00, 'INV-021.pdf', 'BOL-021.pdf', 3), -- TotalAmountDue futura
-('Company V', 'INV-022', '2024-10-10', '2024-10-15', '2024-10-20', 17000.00, 'INV-022.pdf', 'BOL-022.pdf', 3); -- TotalAmountDue futura
-
--- Status:
--- 1 = Issued (Emitida)
--- 2 = BillingDone (Cobrança realizada)
--- 3 = PaymentDelayed (Pagamento em atraso)
--- 4 = PaymentReceived (Pagamento realizado)
+('Company P', 'INV-016', '2024-04-10', NULL, NULL, 11000.00, 'INV-016.pdf', 'BOL-016.pdf', 1),
+('Company Q', 'INV-017', '2024-05-10', NULL, NULL, 12000.00, 'INV-017.pdf', 'BOL-017.pdf', 1),
+('Company R', 'INV-018', '2024-06-10', NULL, NULL, 13000.00, 'INV-018.pdf', 'BOL-018.pdf', 1),
+('Company S', 'INV-019', '2024-07-10', '2024-07-15', '2024-07-20', 14000.00, 'INV-019.pdf', 'BOL-019.pdf', 2),
+('Company T', 'INV-020', '2024-08-10', '2024-08-15', '2024-08-20', 15000.00, 'INV-020.pdf', 'BOL-020.pdf', 2),
+('Company U', 'INV-021', '2024-09-10', '2024-09-15', '2024-09-20', 16000.00, 'INV-021.pdf', 'BOL-021.pdf', 3),
+('Company V', 'INV-022', '2024-10-10', '2024-10-15', '2024-10-20', 17000.00, 'INV-022.pdf', 'BOL-022.pdf', 3);
 
 -- Apagar a tabela Invoices
 DROP TABLE dbo.Invoices;
+```
 
-Como Executar o Projeto
+## Navegue até o diretório do projeto:
+ `cd FinancialSystem`
 
-    Clone o repositório do projeto:
-
-    bash
-
-git clone https://github.com/usuario/financial-system.git
-
-Navegue até o diretório do projeto:
-
-bash
-
-cd financial-system
-
-Restaure as dependências do projeto:
-
-bash
-
-dotnet restore
-
-Atualize a string de conexão no arquivo appsettings.json com as informações do seu servidor SQL:
-
-json
-
-"ConnectionStrings": {
+## Atualize a string de conexão no arquivo appsettings.json com as informações do seu servidor SQL:
+`"ConnectionStrings": {
   "DefaultConnection": "Server=seu_servidor;Database=FinancialSystemDB;User Id=seu_usuario;Password=sua_senha;"
 }
+`
 
-Execute as migrações para criar o esquema do banco de dados:
-
-bash
-
-dotnet ef database update
-
-Execute o projeto:
-
-bash
-
-    dotnet run
-
-Contribuindo
+## Contribuindo
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
